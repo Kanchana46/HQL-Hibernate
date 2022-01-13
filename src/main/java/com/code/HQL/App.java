@@ -37,18 +37,30 @@ public class App {
          laptop.setBrand("Mac");
          session.save(laptop);*/
          Vehicle vehicle = new Vehicle();
-         vehicle.setId(251);
+         vehicle.setId(451);
          vehicle.setName("Car");
+         
+         Vehicle vehicle2 = new Vehicle();
+         vehicle2.setId(452);
+         vehicle2.setName("Bike");
+         
+         
          
          User user = new User();
         // user.setId(3);
          user.setName("Mike");
          user.setAge(20);
          user.setDate(new Date());
-         user.setVehicle(vehicle);
+        // user.setVehicle(vehicle);
+         user.getVehicles().add(vehicle);
+         user.getVehicles().add(vehicle2);
+         //vehicle.getUsers().add(user);
+         //vehicle2.getUsers().add(user);
          
-         session.save(user);
-         session.save(vehicle);
+         
+         session.persist(user);
+        // session.save(vehicle);
+         //session.save(vehicle2);
          
          /*Student st = new Student();
          //st.setId(3);
